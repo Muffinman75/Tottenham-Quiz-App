@@ -1,0 +1,252 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: url('http://2.bp.blogspot.com/-MVi1J_QV-GM/VkeFjMOQNBI/AAAAAAAAnjw/YRDVHmQSQKs/s1600/Pancho-Arena-Doparum-Architects-15-1020x610_result.jpg') no-repeat fixed;
+  background-size: cover;
+  font-family: 'Metrophobic', sans-serif;
+  color: navyblue;
+}
+
+.question-page, .incorrect-answer-page,
+ .correct-answer-page, .result-page {
+    display: none;
+}
+
+header {
+  position: relative;
+  height: 125px;
+  /* margin-bottom: 30px; */
+}
+
+header img {
+  margin-right: 20px;
+  border-radius: 30%;
+  position: absolute;
+  right: 15px;
+  top: 40px;
+  width: 30%;
+}
+
+.col-6, .col-8 {
+  text-align: center;
+}
+
+.start-page img, .question-page img,
+.result-page img{
+  margin-top: 2em;
+}
+
+.start-page, .correct-answer-page,
+ .incorrect-answer-page, .result-page {
+  width: 60%;
+  margin: auto;
+}
+
+.question-page {
+  width: 64%;
+  margin: auto;
+}
+
+fieldset {
+  border: none;
+}
+
+ul li {
+  list-style: none;
+  position: relative;
+  text-align: center;
+  margin-bottom: 10px;
+  right: 30px;
+  /* text-transform: uppercase; */
+  font-weight: bold;
+  padding: 7px; 
+  display: inline-block;
+  font-size: 1.7em;
+  background-color: rgba(255,255,255,0.8);
+  border-radius: 4px;
+}
+
+form, p {
+  background-color: rgba(255,255,255,0.8);  
+}
+
+form {
+  padding-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+/*  position: relative;*/
+  margin-top: 1em;
+  border-radius: 5px;
+}
+
+p {
+  padding: 5px;
+  font-weight: bold;
+  font-size: 1.2em;
+  border-radius: 5px;
+}
+
+img {
+  display: block;
+  margin: auto;
+  color: white;
+  font-weight: bold;
+}
+
+.graphic {
+  width: 50%;
+  }
+
+h1, h2, h3 {
+  font-size: 1.5em;
+  background-color: rgba(255,255,255,0.8);
+  border-radius: 5px;
+}
+
+
+
+button {
+  width: 175px;
+  height: 40px;
+  border-style: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: block;
+  margin: auto;
+  font-size: 1.5em;
+  font-weight: bolder;
+  padding: 4px 10px 24px;
+  border: 2px solid black;
+  border-radius: 3px; 
+  transition-property: color, background;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+}
+
+.start-button, .restart-button {
+  margin-bottom: 20px;
+}
+
+input {
+  opacity: 0;
+}
+
+label:hover, input:hover {
+  background-color: lightgreen;
+  cursor: pointer; 
+}
+
+label:focus {
+  background-color: lightgreen;
+}
+
+input[type="radio"]:checked + label {
+  background-color: lightgreen;
+}
+
+input:focus + label {
+  outline: 5px dashed rgb(101, 104, 101);
+}
+
+button:focus {
+  outline: 5px dashed black;
+  transition-property: color, background;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+  background-color: lightgreen;
+  color: black;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: lightgreen;
+  color: black;
+  font-weight: bold;
+}
+
+label {
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 5px 5px;
+  border: 2px solid black;
+  transition-property: color, background;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+  border-radius: 3px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+
+@media screen and (min-width: 479px) and (max-width: 991px) {
+  .start-page img, .question-page img,
+   .correct-answer-page img, .incorrect-answer-page img,
+   .result-page img {
+    margin-top: 100px;
+  }
+  .start-button {
+    margin-bottom: 20px;
+  }
+  label {
+    line-height: 20px;
+    width: 40%;
+    margin-bottom: 20px;
+    display: inline-block;
+  }
+  p {
+    font-weight: bold;
+  }
+  li {
+    font-size: 1.7em;
+  }
+  h1 {
+    font-size: 2em;
+  }
+  h3 {
+    width: 50%;
+    margin: auto;
+    font-size: 1.75em;
+  }
+  .graphic {
+    width: 35%;
+  }
+  header img {
+    width: 17%;
+    right: 15px;
+    top: 40px;
+  }
+}
+
+@media screen and (min-width: 991px) {
+  label {
+    line-height: 30px;
+    display: inline-block;
+    width: 20%;
+  }
+  p {
+    font-weight: bold;  
+  }
+  li {
+    font-size: 2em;
+  }
+  h1 {
+    font-size: 2em;
+  }
+  h3 {
+    width: 50%;
+    margin: auto;
+    font-size: 2em;
+  }
+  .graphic {
+    width: 20%;
+  }
+  header img {
+    width: 13%;
+    right: 15px;
+    top: 40px;
+  }
+  form {
+    margin-top: 1.5em;
+  }
