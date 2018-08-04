@@ -14,7 +14,7 @@ body {
     display: none;
 }
 
-legend h1 {
+.question {
   text-align: center;
 }
 
