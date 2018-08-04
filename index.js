@@ -9,22 +9,22 @@ function generateQuestion() {
     <img class="graphic" src="graphics/Penalty-Kick.png" alt="penalty kick">
       <form>
         <fieldset name="multiple-choice-answers">
-          <legend><h1>${STORE[questionNumber].question}</h1></legend>
-          <input class="option" id="choice-1" type="radio" name="answer" role="button" value="${STORE[questionNumber].answers[0]}"/>   
+          <legend><h1 class="js-question">${STORE[questionNumber].question}</h1></legend>
+          <input class="option" id="choice-1" type="radio" name="answer" role="button" value="${STORE[questionNumber].answers[0]}"/>
           <label for="choice-1">${STORE[questionNumber].answers[0]}</label>
-          <input class="option" id="choice-2" type="radio" name="answer" role="button" value="${STORE[questionNumber].answers[1]}"/>  
+          <input class="option" id="choice-2" type="radio" name="answer" role="button" value="${STORE[questionNumber].answers[1]}"/>
           <label for="choice-2">${STORE[questionNumber].answers[1]}</label>
           <input class="option" id="choice-3" type="radio" name="answer" role="button" value="${STORE[questionNumber].answers[2]}"/>
           <label for="choice-3">${STORE[questionNumber].answers[2]}</label>
-          <input class="option" id="choice-4" type="radio" name="answer" role="button" value="${STORE[questionNumber].answers[3]}" required/>   
-          <label for="choice-4">${STORE[questionNumber].answers[3]}</label>  
+          <input class="option" id="choice-4" type="radio" name="answer" role="button" value="${STORE[questionNumber].answers[3]}" required/>
+          <label for="choice-4">${STORE[questionNumber].answers[3]}</label>
         </fieldset>
         <button type="submit" class="js-answer-button answer-button" role="button">Submit</button>
-      </form> 
+      </form>
         <ul>
           <li>Question: ${questionNumber + 1}/10</li>
           <li>Current Score: ${score}</li>
-        </ul>`;   
+        </ul>`;
   } else {
     generateQuizResultPage();
   }
@@ -45,14 +45,14 @@ function handleStartClicked() {
     $('.js-start-page').css('display', 'none');
     // $('.js-result-page').css('display', 'none');
     $(displayQuestion);
-    $('.js-question-page').css('display', 'block'); 
+    $('.js-question-page').css('display', 'block');
   });
   // this function is responsible for when the user
   // is ready to begin the quiz and clicks start
   console.log('`handleStartClicked` ran');
 }
 
-function handleAnswerSubmit() {  
+function handleAnswerSubmit() {
   $('.js-question-page').on('submit', 'form', function(event) {
     event.preventDefault();
     let selectedRadio = $('input:checked');
@@ -70,7 +70,7 @@ function handleAnswerSubmit() {
 
       }
     return false;
-  }); 
+  });
   // this function will decide if the answer is correct or
   // not
 
@@ -86,7 +86,7 @@ function handleIncorrectAnswer() {
              <li>Question: ${questionNumber + 1}/10</li>
              <li>Current Score: ${score}</li>
            </ul>`)
-  // this function is responsible for generating the 
+  // this function is responsible for generating the
   // incorrect answer screen
   console.log('`handleIncorrectAnswer` ran');
 }
@@ -102,9 +102,9 @@ function handleCorrectAnswer() {
              <li>Question: ${questionNumber + 1}/10</li>
              <li>Current Score: ${score}</li>
            </ul>`);
-  // this function is responsible for generating the 
+  // this function is responsible for generating the
   // correct answer screen
-  console.log('`handleCorrectAnswer` ran'); 
+  console.log('`handleCorrectAnswer` ran');
 }
 
 function handleNextQuestionClicked() {
@@ -117,7 +117,7 @@ function handleNextQuestionClicked() {
     $('.js-question-page').css('display', 'block');
   });
   // this function is responsible for handling when the
-  // user clicks 'next' on the correct/incorrect answer 
+  // user clicks 'next' on the correct/incorrect answer
   // screen
   console.log('`handleNextQuestionClicked` ran');
 }
@@ -130,7 +130,7 @@ function generateQuizResultPage() {
       <p>Your Final Score Is: ${score} out of 10!</p>
       <p>Consider yourself an expert in the history of the club!</p>
       <button class="restart-button js-restart-button">Re-start</button>`);
-    $('.js-result-page').css('display', 'block');    
+    $('.js-result-page').css('display', 'block');
     } else if (score < 7 && score >= 5) {
       $('.js-question-page').css('display', 'none');
       $('.js-result-page').html(`<h3>Well Done!</h3>
@@ -144,7 +144,7 @@ function generateQuizResultPage() {
       $('.js-result-page').html(`<h3>Better Luck Next Time!</h3>
         <img class="graphic" src="graphics/Red-Card.png" alt="red card">
         <p>Your Final Score Is: ${score} out of 10!</p>
-        <p>Your knowledge of Tottenhams history is limited but you can improve 
+        <p>Your knowledge of Tottenhams history is limited but you can improve
         by taking this quiz again!</p>
         <button class="restart-button js-restart-button">Re-start</button>`);
       $('.js-result-page').css('display', 'block');
@@ -161,7 +161,7 @@ function restartQuiz() {
     questionNumber = questionNumber - 10;
     score = score - score;
   });
-  // if the user hits the 'Re-Take the quiz' button 
+  // if the user hits the 'Re-Take the quiz' button
   //they are taken back to the start of the quiz
   console.log('`restartQuiz` ran');
 }
